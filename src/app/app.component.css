@@ -1,0 +1,65 @@
+
+.brand-name {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color:#0f4e23;
+    color: white;
+    font: 1em sans-serif;
+  }
+
+  .brand-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+table{
+
+    padding: 40px;
+    border-spacing: 2px; 
+    
+  }
+ th {
+    
+    border: 1px solid rgb(9, 63, 30);
+    padding: 9px;}
+
+.table-header-row {
+
+        color: rgb(235, 241, 237); 
+       
+        height: 50px ;
+} 
+
+      td{
+        background-color: #388454;
+        color: rgb(11, 0, 0);
+        margin-right: 200px;
+        border: 1px solid rgb(7, 110, 46);
+        padding: 9px;
+      }
+
+      td:first-child {
+        width: 20%; 
+      }
+      
+      
+      td:nth-child(2) {
+        width: 20%; }
+      
+      
+      td:last-child {
+        width:40%; 
+      }
+   
+      
+   
+
+    .example-button-row .mat-raised-button {
+        display: block;
+        width: 100%;
+        padding: 53%;
+       
+        
+    }
+

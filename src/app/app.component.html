@@ -1,0 +1,59 @@
+<main>
+  <header class="brand-name">
+    <img class="brand-logo" src="/assets/download.png" alt="logo" aria-hidden="true">
+    <br>
+    <span><h1> Qur'an </h1></span>
+  </header> 
+</main>
+
+<mat-form-field style="padding: 40px">
+  <input matInput [matDatepicker]="myDatepicker" placeholder="Choose a date" (click)="myDatepicker.open()">
+  <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+  <mat-datepicker #myDatepicker></mat-datepicker>
+</mat-form-field>
+
+<button mat-raised-button  style="background-color: #000e05; color: #ffffff;" (click)="openAddReaderDialog()"> Add Reader </button> 
+
+<table mat-table [dataSource]="dataSource"  >
+ 
+  <ng-container matColumnDef="select"   >
+     <th mat-header-cell *matHeaderCellDef style="background-color:#0f4e23;" class =" table-header-row" >
+       <mat-checkbox  (change)="$event ? masterToggle() : null"
+                     [checked]="selection.hasValue() && isAllSelected()"
+                     [indeterminate]="selection.hasValue() && !isAllSelected()"   >
+       </mat-checkbox>
+     </th>
+     <td mat-cell *matCellDef="let row">
+       <mat-checkbox (click)="$event.stopPropagation()"
+                     (change)="$event ? selection.toggle(row) : null"
+                     [checked]="selection.isSelected(row)">
+       </mat-checkbox> 
+      </td> 
+   </ng-container>
+ 
+   
+   <ng-container matColumnDef="id">
+ 
+  
+    <th mat-header-cell *matHeaderCellDef  class ="table-header-row" style="background-color:#0f4e23;"> Id </th>
+     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+   </ng-container>
+ 
+   <ng-container matColumnDef="name" >
+     <th mat-header-cell *matHeaderCellDef  class =" table-header-row" style="background-color:#0f4e23;"> Name </th>
+     <td mat-cell *matCellDef="let element" >
+       <mat-select multiple  (selectionChange)="onNameChange(element, $event.value)">
+         <mat-option *ngFor="let option of nameOptions" [value]="option">
+           {{option}}
+         </mat-option>
+       </mat-select>
+     </td>
+   </ng-container>
+ 
+   
+   <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+ 
+   
+   <tr mat-row *matRowDef="let element; columns: displayedColumns;" ></tr>
+ </table>
+  <button  mat-raised-button style="background-color: #000401;  color: #ffffff; margin-left: 5%;"> Save </button> 

@@ -1,0 +1,23 @@
+
+<mat-dialog-content>
+    <mat-form-field>
+        <input matInput [matDatepicker]="datepicker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker></mat-datepicker>
+      </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Part Number">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Reader ">
+  </mat-form-field>
+  <br>
+  <mat-checkbox>Active</mat-checkbox>
+  <br>
+ 
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button style="background-color: #1baa3e; display: block; color: #ffffff;">Save</button>
+  <button mat-raised-button style="background-color: #d2133a; display: block; color: #fbf6f6; margin-left: 50%;">Cancel</button>
+</mat-dialog-actions>
